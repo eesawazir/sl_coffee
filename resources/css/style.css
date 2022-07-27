@@ -1,0 +1,558 @@
+/* BASIC OVERALL STYLING */
+
+
+body {
+  background: white;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", Arial, sans-serif;
+  color: black;
+  min-width: 320px;
+}
+
+/* HEADER */
+
+#header {
+  background: black;
+  padding: 1em;
+  display: flex;
+  place-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 3em;
+}
+
+.menu {
+  display: none;
+}
+
+.nav-bar {
+  float: right;
+  list-style: none;
+}
+
+.nav-bar li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.nav-bar li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 130%;
+  font-weight: 400;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.nav-bar li a:hover {
+  border-bottom: 2px solid #28b062;
+}
+
+@media only screen and (max-width: 500px) { 
+
+  .menu {
+    height: 2em;
+    display: none; /*block*/
+    float: right;
+  }
+
+  .nav-bar li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .nav-bar li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 80%;
+    font-weight: 300;
+    border-bottom: 1px solid transparent;
+  }
+}
+@media only screen and (max-width: 700px) { 
+  
+  #header {
+    background: black;
+    display: flex;
+    padding-top: 1.25em;
+    place-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 2em;
+  }
+  
+  .menu {
+    height: 2em;
+    display: none; /*block*/
+    float: right;
+  }
+}
+
+/* HERO */
+
+.hero {
+  background-image: linear-gradient(#000, rgba(0, 0, 0, 0.25)),
+  url(img/hero.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.home-text-box {
+  position: absolute;
+  color: white;
+  top: 35%;
+  left: 10%;
+}
+
+h1 {
+  font-size: 4em;
+  margin: 0.5em 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .hero {
+    height: 37.7vh;
+    width: auto;
+  }
+
+  .home-text-box {
+    position: absolute;
+    color: white;
+    top: 20%;
+    left: 10%;
+  }
+
+  h1 {
+    font-size: 1.25em;
+  }
+}
+
+/* BUTTONS */
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 10px;
+  font-weight: 300;
+  border-radius: 200px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: #28b062;
+  border: 1px solid #28b062;
+  color: #ffffff;
+  margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 1px solid #28b062;
+  color: #ffffff;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #229453;
+}
+
+.btn-full:hover,
+.btn-full:active {
+  background-color: #229453;
+  border: 1px solid #229453;
+  color: #ffffff;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  border: 1px solid #229453;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 700px) {
+  .btn {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .btn-full {
+    background-color: #28b062;
+    color: #ffffff;
+    margin-right: 15px;
+  }
+  
+  .btn-ghost {
+    border: 1px solid #28b062;
+    color: #ffffff;
+  }
+
+}
+
+/* COFFEE BEANS SECTIONS */
+
+h2 {
+  text-align: center;
+  margin: 2em;
+}
+
+.map {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 4em;
+}
+
+.flags-section {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  margin: auto;
+}
+
+.flag {
+  position: relative;
+  width: 85%;
+  border: black 1px solid;
+  margin: auto;
+}
+
+.flag img {
+  display: block;
+  width: 100%;
+}
+
+.flag-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+}
+
+.flag-overlay:hover {
+  opacity: 1;
+}
+
+.flag-title {
+  font-size: 1.50em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.flag p {
+  font-size: 1em;
+  margin: 1em;
+  color: #ffffff;
+}
+
+.coffee-components {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+  margin: 0 3em;
+}
+
+.coffee-component {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+h3 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  text-align: center;
+}
+
+.icon {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 4em;
+}
+
+.coffee-brews-main-text {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  text-align: justify;
+}
+
+.coffee-brews {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 3em 0;
+}
+
+
+.brews img {
+  width: 100%;
+  height: auto;
+}
+
+.brews {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.brew-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.brew-overlay:hover {
+  opacity: 1;
+}
+
+.brew-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.brews p {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.3em;
+  margin-top: 0.25em;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 900px) {
+  .flag-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+  }
+  
+  .flag-title {
+    font-size: 1.25em;
+  }
+  
+  .flag p {
+    font-size: .75em;
+  }
+  
+  .brew-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+  }
+  
+  .brew-title {
+    font-size: 1em;
+  }
+  
+  .brews p {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  h2 {
+    text-align: center;
+    margin: 2em;
+    font-size: 1em;
+  }
+  
+  .map {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+  
+  .flags-section {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+    margin: auto;
+  }
+  
+  .flag {
+    position: relative;
+    width: 90%;
+    border: black 1px solid;
+    margin: auto;
+  }
+  
+  .flag img {
+    display: block;
+    width: 100%;
+  }
+  
+  .flag-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+
+  
+  .flag-title {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .flag p {
+    font-size: 0.55em;
+    margin: 1em;
+    color: #ffffff;
+  }
+  
+  .coffee-components {
+    display: block;
+  }
+  
+  .coffee-component {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75px 2fr;
+    justify-items: center;
+    align-items: end;
+  }
+  
+  h3 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: center;
+  }
+  
+  .coffee-brews {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 3em 0;
+  }
+  
+  
+  .brews img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .brews {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .brew-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+  }
+  
+  .brew-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .brews p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3em;
+    margin-top: 0.25em;
+    color: #ffffff;
+  }
+}
+
+/* ABOUT */
+
+#about-section {
+  margin: 0em 2em 3em 2em;;
+}
+
+#about {
+  margin: 0;
+}
+
+#about-section p {
+  text-align: justify;
+}
+
+/* FOOTER */
+
+#footer {
+  background: black;
+  padding: 0.75em;
+}
+
+#footer p {
+  color: white;
+  text-align: center;
+}
+
+#top-button {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 50px;
+  height: 50px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  #footer {
+    padding: 0.50em;
+  }
+
+  #top-button {
+    position: fixed;
+    bottom: 60px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/*
+@media only screen and (max-width: 700px) {
+  
+} 
+*/
